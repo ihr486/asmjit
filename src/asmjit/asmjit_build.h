@@ -119,7 +119,7 @@
 // [@WIN32_CRT_NO_DEPRECATE}@]
 
 // [@WIN32_LEAN_AND_MEAN{@]
-#if (defined(_WIN32) || defined(_WINDOWS)) && !defined(_WINDOWS_)
+#if (defined(_WIN32) || defined(_WINDOWS) || defined(__CYGWIN__)) && !defined(_WINDOWS_)
 # if !defined(WIN32_LEAN_AND_MEAN)
 #  define WIN32_LEAN_AND_MEAN
 #  define ASMJIT_UNDEF_WIN32_LEAN_AND_MEAN
@@ -145,7 +145,7 @@
 // ============================================================================
 
 // [@OS{@]
-#if defined(_WIN32) || defined(_WINDOWS)
+#if defined(_WIN32) || defined(_WINDOWS) || defined(__CYGWIN__)
 #define ASMJIT_OS_WINDOWS       (1)
 #else
 #define ASMJIT_OS_WINDOWS       (0)
